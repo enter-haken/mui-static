@@ -1,0 +1,11 @@
+<section #search class="section" style="z-index:1">
+  <div class="content">
+    <div class="columns is-centered">
+      <div class="column is-one-third has-text-centered">
+        <app-search (onSearchChanged)="searchChanged($event)"></app-search>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-graph [graphHeight]="graphHeight" [searchPhrase]="searchPhrase"></app-graph>

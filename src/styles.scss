@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+//$footer-padding: 1,5rem 1rem 3rem;
+$section-padding: 1rem 1rem;
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+@import "~bulma/bulma.sass";
