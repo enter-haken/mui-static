@@ -23,7 +23,7 @@ export class MemoryService {
         edges: this.getVisEdges(memories).ToArray()
       }
 
-      let foundNodes = memories.Where(x => x.markdown.toLowerCase().indexOf(query) >= 0)
+      let foundNodes = memories.Where(x => x.markdown.toLowerCase().indexOf(query.toLowerCase()) >= 0)
       let neighbours = this.getNodes(
         memories,
         this.getNodeIdsFromNeighbourNodes(foundNodes));
