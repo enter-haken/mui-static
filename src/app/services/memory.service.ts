@@ -5,7 +5,7 @@ import { Data, Node, Edge } from 'vis';
 import { TestData } from '../../assets/testData.json';
 import { Memory, Link } from '../models/memory';
 
-import { List, Enumerable } from 'linqts';
+import { List } from 'linqts';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +38,12 @@ export class MemoryService {
           nodes: this.getVisNodes(nodes).ToArray(),
           edges: this.getVisEdges(nodes).ToArray()
         }
+  }
+
+  public getById(id: string): Memory {
+    const memories = new List<Memory>(<Memory[]>(<unknown>TestData));
+
+    return memories.SingleOrDefault(x => x.meta.id == id);
   }
 
   private getVisNodes(nodes: List<Memory>): List<Node> {

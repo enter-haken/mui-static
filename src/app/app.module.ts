@@ -8,13 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StartComponent } from './components/start/start.component';
 import { GraphComponent } from './components/graph/graph.component';
 import { SearchComponent } from './components/search/search.component';
+import { ContentComponent } from './components/content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartComponent,
     GraphComponent,
-    SearchComponent
+    SearchComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
