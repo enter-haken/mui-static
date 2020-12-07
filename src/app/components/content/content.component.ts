@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { Memory } from '../../models/memory';
   styleUrls: ['./content.component.scss']
 })
 
-export class ContentComponent implements OnInit, AfterViewInit {
+export class ContentComponent implements AfterViewInit {
 
   @ViewChild('memory') el: ElementRef;
 
@@ -21,17 +21,13 @@ export class ContentComponent implements OnInit, AfterViewInit {
   constructor(
     private route: ActivatedRoute,
     private memoryService: MemoryService
-  ) { }
+  ) {
+    let id = this.route.snapshot.params.id;
 
-  ngOnInit(): void {
-    let id = this.route.snapshot.params.id; 
-
-   this.memory = this.memoryService.getById(id);
-   
+    this.memory = this.memoryService.getById(id);
   }
 
   ngAfterViewInit(): void {
-   this.el.nativeElement.innerHTML =  this.memory.content;
-
+    this.el.nativeElement.innerHTML =  this.memory.content;
   }
 }

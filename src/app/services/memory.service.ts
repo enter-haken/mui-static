@@ -69,8 +69,25 @@ export class MemoryService {
   return <Node>{
     id: memory.meta.id,
     label: titleWithLineBreakAfterThreeWords,
-    shape: "box"
+    shape: "box",
+    borderWidth: this.getBorderWidth(memory)
   }
+  }
+
+  private getBorderWidth(memory: Memory): number{
+    if (memory.content.length < 100)
+      return 1;
+
+    if (memory.content.length < 200)
+      return 2;
+
+    if (memory.content.length < 300)
+      return 3;
+
+    if (memory.content.length < 500)
+      return 5;
+
+    return 8;
   }
 
   private getNodeIdsFromNeighbourNodes(memories: List<Memory>) : List<string> {

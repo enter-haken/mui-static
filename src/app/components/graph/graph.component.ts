@@ -42,10 +42,6 @@ export class GraphComponent {
       {
         height: this.graphHeight + 'px',
         autoResize: true,
-        //width: "1800px",
-        // needed for bigger graphs
-        // TODO: activate on smaller graphs
-        // - find a sane number of nodes
         physics: {
           stabilization: false
         }
