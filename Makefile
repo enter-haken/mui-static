@@ -5,7 +5,7 @@ default: build
 
 .PHONY: get_node_modules_if_necessary
 get_node_modules_if_necessary:
-	if [ ! -d ./dist/ ]; then npm install; fi
+	if [ ! -d ./node_modules/ ]; then npm install; fi
 
 .PHONY: add_test_data_if_necessary
 add_test_data_if_necessary:
